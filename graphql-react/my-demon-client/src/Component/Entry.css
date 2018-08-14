@@ -1,0 +1,27 @@
+.button{
+    position: absolute;
+    display: inline;
+    right:8%;
+    top:10%;
+    float:left;
+}
+
+.header p{
+    position:absolute;
+    top: 15%;
+    display:block;
+   text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color:white;
+}
+
+.header{
+
+    position: relative;
+    background: dimgray;
+}
+
+.header a{
+    color:white
+}

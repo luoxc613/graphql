@@ -1,0 +1,20 @@
+# import Post from './generated/prisma.graphql'
+# import User from './generated/prisma.graphql'
+# import Comments from './generated/prisma.graphql'
+# import BatchPayload from './generated/prisma.graphql'
+type Query {
+  posts(searchString: String): [Post!]!
+  user(searchString: String): [User]!
+  comments_postId(id: ID): [Comments!]!
+  posts_by_uid(id:ID!):[Post!]!
+  
+}
+
+type Mutation {
+  createDraft(authorId: ID!, title: String!, content: String!): Post
+  publish(id: ID!): Post
+  deletePost(id: ID!): Post
+  createUser(name:String!, email: String!, password: String!): User
+  createComment(content:String!, user_id:ID!, post_id:ID!): Comments!
+  userLogin(email:String!, password: String!, status: Boolean!): BatchPayload!
+  }

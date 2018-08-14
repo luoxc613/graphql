@@ -1,0 +1,25 @@
+type User {
+  id: ID! @unique
+  name: String!
+  email:String! @unique
+  password: String!
+  posts: [Post!]!
+  Comments:[Comments!]!
+  login: Boolean @default(value:"false")
+}
+
+type Post {
+  id: ID! @unique
+  title: String!
+  content: String!
+  published: Boolean! @default(value: "false")
+  author: User!
+  comments:[Comments!]!
+}
+
+type Comments{
+	id: ID! @unique
+	author: User!
+	content: String!
+	post: Post!
+} 
